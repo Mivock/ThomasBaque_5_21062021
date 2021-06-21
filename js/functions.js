@@ -18,3 +18,18 @@ let currentDate = new Date();
 let cDay = currentDate.getDate();
 let cMonth = currentDate.getMonth() + 1;
 let cYear = currentDate.getFullYear();
+
+//vider le panier
+function clearBasket() {
+  localStorage.clear();
+}
+
+//création de la class pour fonction buyCamera
+class Product {
+  constructor(id, chosenLense, quantity, price) {
+    this.id = id;
+    this.chosenLense = chosenLense;
+    this.quantity = quantity;
+    this.price = price;
+  }
+}

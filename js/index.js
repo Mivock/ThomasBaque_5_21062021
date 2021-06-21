@@ -1,11 +1,11 @@
-//Fonction GET pour récuperer les data
-async function cameraPreview() {
-  fetch(url)
-    .then((response) => response.json())
-    .then((response) => {
-      for (let camera of response) {
-        //pour chaque objet de la reponse alors...
-        document.querySelector("#produits").innerHTML += `<div class="card"> 
+//GET pour récuperer les data
+
+fetch(url)
+  .then((response) => response.json())
+  .then((response) => {
+    for (let camera of response) {
+      //pour chaque objet de la reponse alors...
+      document.querySelector("#produits").innerHTML += `<div class="card"> 
                         <img src="${camera.imageUrl}" class="card-img-top" alt="teste alternatif"/>
                         <div class="card-body">
                             <h5 class="card-title">${camera.name}</h5>
@@ -13,8 +13,5 @@ async function cameraPreview() {
                             <a href="item.html?id=${camera._id}" class="btn btn-warning">En savoir plus</a>
                         </div>
                     </div>`;
-      }
-    });
-}
-
-cameraPreview(); //démarrage de la fonction
+    }
+  });
