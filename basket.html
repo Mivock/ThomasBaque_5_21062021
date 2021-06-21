@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orinocam - Accueil</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script src="/js/functions.js" defer></script>
+    <script src="/js/basket.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="img/camera2.svg"
+            alt=""
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          OrinoCam
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"
+                >Accueil</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="basket.html">
+                <img
+                  src="img/cart.svg"
+                  alt="Icône du panier"
+                  width="24"
+                  class="d-inline-block align-text-top"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <body>
+      <!--basket-->
+      <section id="section" class="container my-5 align-middle">
+        <div>
+          <p class="text-center fs-4 text-light bg-secondary">
+            OrinoCam - Récapitulatif
+          </p>
+          <div id="basketEmpty" class="text-center"></div>
+          <div class="table-responsive" id="tableBasket">
+            <table class="table table-hover my-auto mx-0">
+              <thead>
+                <tr class="text-center fs-6">
+                  <th scole="col">Camera</th>
+                  <th scole="col">Nom</th>
+                  <th scole="col">Objectif</th>
+                  <th scole="col">Quantité</th>
+                  <th scole="col">Prix</th>
+                  <th scole="col">Sous-Total</th>
+                </tr>
+              </thead>
+              <tbody id="basketDisplay">
+                <!--tableau via javascript-->
+              </tbody>
+              <tfoot>
+                <tr class="text-center fs-5 bg-light">
+                  <th colspan="4" class="bg-white"></th>
+                  <th colspan="1">Total :</th>
+                  <th colspan="1" id="grandTotal"></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!--form-->
+          <form class="container-fluid">
+            <div class="form-group col-md-6">
+              <label for="inputEmail">Adresse e-mail</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail"
+                placeholder="elon@spacex.com"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputFirstName">Prénom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputFirstName"
+                  placeholder="Elon"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputLastName">Nom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputLastName"
+                  placeholder="Musk"
+                />
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Adresse</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAddress"
+                placeholder="Boulevard de Mars"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Ville</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputCity"
+                  placeholder="Los Angeles"
+                />
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="inputZip">Code Postal</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputZip"
+                  placeholder="90016"
+                />
+              </div>
+            </div>
+            <br />
+            <!--buttons-->
+            <div class="text-center my-5 row">
+              <div class="col-12 col-sm-6 my-4">
+                <button
+                  type="submit"
+                  class="btn btn-secondary mx-5"
+                  id="validateBasket"
+                >
+                  Valider le panier
+                </button>
+              </div>
+              <div class="col-12 col-sm-6 my-4">
+                <button
+                  type="button"
+                  class="btn btn-danger mx-5"
+                  id="clearBasket"
+                >
+                  Vider le panier
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </body>
+
+    <!--
+
+
+
+-->
+
+    <footer class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2021 Copyright:
+        <a class="text-dark" href="index.html">Orinoco</a>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
