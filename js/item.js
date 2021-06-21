@@ -1,13 +1,12 @@
 console.table(localStorage);
-//création var qui cherche le champs _id afin de réaliser une url par produit
-let id = new URLSearchParams(location.search).get("id");
-//url personnalisée par produit
-const urlCamera = url + id;
 
 fetch(urlCamera)
   .then((response) => response.json())
   .then((data) => {
-    let idCamera = data._id;
+    JSON.parse(localStorage.getItem("cameraData"));
+    localStorage.setItem("cameraData", JSON.stringify(data));
+    //console.table(cameraData);
+
     console.table(data); //pour test
 
     document.querySelector(
@@ -54,16 +53,17 @@ fetch(urlCamera)
     document.querySelector("#buy").addEventListener("click", function () {
       //écouter #buy onclick et si click exectuer =>
       let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")); //création local storage
-      let id = data._id;
+      let idCamera = data._id;
       let chosenLense = document.querySelector("#lenses").value; //reference objectif
       let quantity = document.querySelector("#quantity").value; //reference quantité
       let price = data.price;
+      let image = data.imageUrl;
 
       if (shoppingCart === null) {
         //!!null important sinon erreur et impossible de push car array pas créé
         shoppingCart = [];
       }
-      let product = new Product(idCamera, chosenLense, quantity, price); // création d'un nouvel item avec les parametres définis (id, objectif, quantité, prix dans le panier)
+      let product = new Product(idCamera, chosenLense, quantity, price, image); // création d'un nouvel item avec les parametres définis (id, objectif, quantité, prix et image dans le panier)
       let found = shoppingCart.find(
         (e) =>
           e.idCamera === product.idCamera &&
