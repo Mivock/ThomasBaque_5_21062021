@@ -102,6 +102,7 @@ if (shoppingCart === null) {
         .then((response) => response.json()) // response.json nous donnera l'orderId
         .then((orderId) => {
           localStorage.setItem("confirmation", JSON.stringify(orderId));
+          //effacer localstorage shopping cart
           document.location.href = "/confirmation.html";
         })
         .catch((error) => console.log("Erreur : " + error));

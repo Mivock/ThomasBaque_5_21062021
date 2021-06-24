@@ -64,10 +64,9 @@ fetch(urlCamera)
         shoppingCart = [];
       }
       let product = new Product(idCamera, chosenLense, quantity, price, image); // création d'un nouvel item avec les parametres définis (id, objectif, quantité, prix et image dans le panier)
+      console.log(product);
       let found = shoppingCart.find(
-        (e) =>
-          e.idCamera === product.idCamera &&
-          e.chosenLense === product.chosenLense
+        (e) => e.id === product.id && e.chosenLense === product.chosenLense
       );
       console.table(product);
       console.table(shoppingCart);
