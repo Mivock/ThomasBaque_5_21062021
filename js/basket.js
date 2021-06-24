@@ -31,7 +31,7 @@ if (shoppingCart === null) {
     }}">
         </td>
         <td class="align-middle">
-            <span>${cameraData.name}</span>
+            <span>${product.name}</span>
         </td>
       <td class="align-middle">
       <span>${product.chosenLense}</span>

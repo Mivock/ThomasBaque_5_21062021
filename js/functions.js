@@ -1,8 +1,8 @@
-//url API
+//url API en local
 const url = "http://localhost:3000/api/cameras/";
 
 //url API hébéergée en ligne
-// const url = "https://p5-api-tb.herokuapp.com/api/cameras/";
+//const url = "https://p5-api-tb.herokuapp.com/api/cameras/";
 
 //création var qui cherche le champs _id afin de réaliser une url par produit
 let id = new URLSearchParams(location.search).get("id");
@@ -30,10 +30,11 @@ function clearBasket() {
   localStorage.clear();
 }
 
-//création de la class pour fonction buyCamera
+//création de la class pour la mise dans le panier
 class Product {
-  constructor(id, chosenLense, quantity, price, image) {
+  constructor(id, name, chosenLense, quantity, price, image) {
     this.id = id;
+    this.name = name;
     this.chosenLense = chosenLense;
     this.quantity = quantity;
     this.price = price;
