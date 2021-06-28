@@ -1,4 +1,5 @@
 window.onload = createConfirmation();
+window.onbeforeunload = clearBasket();
 
 const displayDate = (document.querySelector("#displayDate").textContent =
   cDay + " / " + cMonth + " / " + cYear);
